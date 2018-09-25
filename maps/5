@@ -1,0 +1,11 @@
+5
+##start
+q 1 1
+##end
+w 2 2
+e 3 3
+r 4 4
+q-e
+e-w
+q-r
+r-w
