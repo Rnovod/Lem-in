@@ -86,5 +86,4 @@ void				ftlmnv_ants_moving(t_vdata *d, t_sdl_data *s)
 		if (1000 / FPS > SDL_GetTicks() - tick)
 			SDL_Delay(1000 / FPS - (SDL_GetTicks() - tick));
 	}
-	(d->keys & KEY_LEFT && d->move->prev) ? d->move = d->move->prev : 0;
 }

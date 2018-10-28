@@ -66,6 +66,8 @@ static inline void	ftlmnv_draw(t_vdata *d, t_sdl_data *s)
 		ftlmnv_ants_moving(d, s);
 	if (SDL_RenderCopy(s->rend, s->background, NULL, NULL) < 0)
 		ftlmnv_error(d, -1);
+	if (d->keys & KEY_LEFT && d->move->prev)
+		d->move = d->move->prev;
 	ftlmnv_where_ants(d, s);
 	SDL_RenderPresent(s->rend);
 }
@@ -78,6 +80,7 @@ void				ftlmnv_draw_farm(t_vdata *d, t_sdl_data *s)
 	while (42)
 	{
 		d->fl = 0;
+		d->keys = 0;
 		if (SDL_PollEvent(&s->event))
 		{
 			ftlmnv_event(d, s);
